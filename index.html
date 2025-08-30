@@ -1,0 +1,356 @@
+<html lang="en"><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+    <title aria-label="This content is blocked">
+      
+      Restricted
+   </title>
+
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet">
+    <link href="//fonts.googleapis.com/css?family=Roboto:400,100,700,900" rel="stylesheet" type="text/css">
+    <link href="/assets/lock-icon.png" rel="icon" type="image/png">
+
+    <style>
+        @supports (font: -apple-system-body) {
+            html {
+                font: -apple-system-body;
+            }
+        }
+
+        html {
+            height: 100%;
+        }
+
+        body {
+            background-color: #3E3E3E;
+            background: radial-gradient(ellipse at center, #707070 13%, #333333 100%);
+            font-family: 'Roboto', sans-serif;
+        }
+
+        .blur {
+            -webkit-filter: blur(10px);
+            filter: blur(10px);
+            opacity: 0.6;
+        }
+
+        .popspace {
+            opacity: 1.0;
+            position: absolute;
+            top: 190px;
+            left: 430px;
+            height: 100%;
+            width: 100%;
+        }
+
+        .pophead {
+            color: #00AAD7;
+            margin: 0;
+            text-align: center;
+            font-family: 'Roboto', sans-serif;
+            font-size: 20px;
+            font-weight: 100;
+        }
+
+        .pophead2 {
+            color: #AFAFAF;
+            padding-top: 5;
+            text-align: center;
+            font-family: 'Roboto', sans-serif;
+            font-size: 11px;
+            font-weight: 100;
+        }
+
+        .form {
+            border-radius:2px;
+            padding: 20px 30px;
+            box-shadow: 0 0 15px;
+            font-size:14px;
+            font-weight: bold;
+            max-width: 350px;
+            margin: 20px 250px 0 35px;
+            float: left;
+        }
+
+        .content {
+            max-width: 32em;
+            padding: 0 1.25em;
+            margin: 1.875em auto;
+            color: #c7c7c7;
+            text-align: center;
+            font-size: 1.72em;
+            font-weight: 100;
+            height: 22em;
+            background-repeat: no-repeat;
+            background-size: 32%;
+            background-position-y: 3.80em;
+            background-position-x: 50%;
+            background-position: center center;
+            background-image: url('https://blocked.goguardian.com/assets/lock-icon.png');
+        }
+
+        .content h1 {
+            color: #00AAD7;
+            font-size: 2.5em;
+            margin: 0;
+            margin-bottom: -20px;
+        }
+		.bypassCont,
+		.bypassCont2 {
+		    margin-top: 40px;
+		}
+		
+		/* Hide labels inside both */
+		.bypassCont label,
+		.bypassCont2 label {
+		    border: 0;
+		    clip: rect(0 0 0 0);
+		    height: 1px;
+		    margin: -1px;
+		    overflow: hidden;
+		    padding: 0;
+		    position: absolute;
+		    width: 1px;
+		}
+		
+		/* Hide <i> elements inside both */
+		.bypassCont i,
+		.bypassCont2 i {
+		    display: none;
+		}
+		
+		/* Bypass button styles */
+		.bypassCont button.bypassfilter,
+		.bypassCont2 button.bypassfilter {
+		    border-radius: 4px;
+		    background-image: -webkit-linear-gradient(89deg, #00AAD7 0%, #2DBCE2 81%);
+		    background-image: linear-gradient(-1deg, #00AAD7 0%, #2DBCE2 81%);
+		    box-shadow: 0 1px 4px 0 rgba(0,0,0,0.38);
+		    border: none;
+		    padding: 15px;
+		    color: white;
+		    font-size: 25px;
+		    width: 250px;
+		    margin-top: 235px;
+		    position: relative;
+		    font-family: 'Roboto', sans-serif;
+		}
+		
+		/* Arrow after button */
+		.bypassCont button.bypassfilter::after,
+		.bypassCont2 button.bypassfilter::after {
+		    font-size: 30px;
+		    position: absolute;
+		    content: ">";
+		    color: #2c5b75;
+		    top: 10px;
+		    right: 20px;
+		    transform: scale(1, 1.5);
+		    -webkit-transform: scale(1, 1.5);
+		}
+	
+		/* Button and input defaults */
+		.bypassCont button,
+		.bypassCont input,
+		.bypassCont2 button,
+		.bypassCont2 input {
+		    margin-top: 10px;
+		    color: #333;
+		}
+		
+
+        .content i {
+            display: block;
+            position: fixed;
+            bottom: 0px;
+            left: 0px;
+            max-width: 300px;
+            width: 100%;
+            height: 60px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 310px;
+        }
+
+       
+
+        .whitelist {
+            margin-top: 10px;
+            font-size: 16px;
+            text-decoration: underline;
+            cursor: pointer;
+            color: #9c9c9c;
+        }
+
+        #password {
+            width: 292px;
+            height: 37px;
+            font-weight: 100;
+            padding: 10px;
+        }
+
+        #unblockreq {
+            height:130px;
+            width: 290px;
+            font-weight: 100;
+            padding: 10px;
+        }
+
+        .but {
+            background-image: linear-gradient(-1deg, #35B0D1 0%, #35B0D1 81%);
+            box-shadow: 0 1px 4px 0 rgba(0,0,0,0.38);
+            border: none;
+            margin-left: 95;
+            color: rgb(155, 213, 221);
+            font-size: 16px;
+            font-weight: 300;
+            width: 100px;
+            height: 35px;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        #logindiv,
+        #unblockdiv {
+            height: 0;
+            width: 0;
+        }
+
+        .outer {
+            display: table;
+            position: absolute;
+            height: 100%;
+            width: 100%;
+        }
+
+        .middle {
+            display: table-cell;
+            vertical-align: middle;
+        }
+
+        .but:hover {
+            color: #E1E9F0;
+        }
+        
+        .bypassCont2 {
+        	display: none;
+        }
+        
+        .hidden2 {
+        	opacity: 0;
+            pointer-events: auto;
+        }
+        .hidden2 button.showbt {
+		    width: 1px;
+            height: 10px;
+		    margin-top: 0px;
+		    position: relative;
+		    font-family: 'Roboto', sans-serif;
+		}
+        
+        .password::-webkit-password-toggle-button {
+    		display: none;
+		}
+		.password::-moz-password-toggle-button {
+   			display: none;
+		}
+		.password::-ms-reveal {
+		    display: none;
+		}
+    </style>
+</head>
+
+<body>
+
+<div class="hidden2"><button class="showbt">show</button></div>
+
+
+<div class="outer">
+<!-- this is our main stuff here -->
+    <div class="middle" aria-label="This content is blocked" title="This content is blocked">
+    
+    <div class="content">
+  <h1>
+    <strong>
+      <i class="fa fa-exclamation-triangle"></i>
+      Restricted
+   </strong>
+  </h1>
+  <br>
+  This website has been blocked by your administrator.
+  <!-- the bypass button -->
+  <div class="bypassCont"><button class="btn btn-default btn-xs bypassfilter">Bypass</button></div>
+  <!-- the password stuff -->
+  <div class="bypassCont2" style="margin-top: 250px;">
+      <span class="logText">All attempts are logged.</span>
+      <br>
+      <label for="url" class="visuallyhidden">Website URL: </label>
+      <input class="url" placeholder="Website URL" value="Website URL" readonly="">
+      <br>
+      <label for="password" class="visuallyhidden">Password: </label>
+      <input class="password" placeholder="Password" type="password">
+      <br>
+    <button class="btn submitAll btn-default">Submit</button></div>
+</div>
+
+
+<script>
+    $(function() {
+        $('title').text($('.content h1 strong').text());
+    });
+</script>
+
+ <!-- button scripts -->
+<script>
+	const ctxid = window.location.search;
+	const params = new URLSearchParams(ctxid);
+
+	const ctx = params.get("ctx");
+	const decoded = atob(decodeURIComponent(ctx));
+	const ctxParams = new URLSearchParams(decoded);
+	const blockedsite = decodeURIComponent(ctxParams.get("ou"));
+    
+	const container = document.querySelector(".bypassCont");
+    
+	const bypassbutton = document.querySelector(".bypassCont .bypassfilter");
+    const showbutton = document.querySelector(".hidden2 .showbt");
+
+    const submitbutton = document.querySelector(".bypassCont2 .btn-default");
+    const websiteurl = document.querySelector(".bypassCont2 .url");
+	const passwordbox = document.querySelector(".bypassCont2 .password");
+    const logtxt = document.querySelector(".bypassCont2 .logText");
+    let pass = passwordbox.value;
+
+    const inputGG = document.querySelector(".bypassCont2");
+    
+    if (blockedsite == "null"){
+        container.remove();
+    }
+    
+    bypassbutton.addEventListener("click", () => {
+    	bypassbutton.remove(bypassbutton);
+        inputGG.style.display = "block";
+        if (blockedsite != "null"){
+        	websiteurl.value = blockedsite;
+        }
+    });
+    submitbutton.addEventListener("click", () => {
+        pass = passwordbox.value;
+        localStorage.setItem("lastpass", pass);
+    	window.location.href = blockedsite;
+        
+    });
+    
+    showbutton.addEventListener("click", () => {
+    	bypassbutton.remove(bypassbutton);
+        inputGG.style.display = "block";
+        passwordbox.remove();
+        submitbutton.remove();
+        if (localStorage.getItem("lastpass") != "null"){
+        	websiteurl.value = localStorage.getItem("lastpass");
+        } else {
+        	websiteurl.value = "No Passwords Saved";
+        }
+        logtxt.textContent = "Last Used Password:";
+    });
+    
+</script>
